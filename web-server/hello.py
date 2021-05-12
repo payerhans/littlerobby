@@ -30,29 +30,21 @@ def hello_world():
 @app.route('/left')
 def left():
     robby.left()
-    sleep(20)
-    robby.stop()
     return 'true'
 
 @app.route('/right')
 def right():
     robby.right()
-    sleep(20)
-    robby.stop()
     return 'true'
 
 @app.route('/forward')
 def forward():
     robby.forward()
-    sleep(1)
-    robby.stop()
     return 'true'
 
 @app.route('/backward')
 def backward():
     robby.backward()
-    sleep(1)
-    robby.stop()
     return 'true'
 
 @app.route('/stop')
