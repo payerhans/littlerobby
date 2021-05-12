@@ -1,3 +1,9 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+<body>
+
 <h1> {{ header }} </h1>
 <p> {{ text }} </p>
 
@@ -7,3 +13,41 @@
 <div>
 <iframe src="http://192.168.0.121:8080/stream" width="100%" height="100%"></iframe>
 </div>
+
+<div style=" height:400px; width:300px; float:right;">
+
+
+<h2>Surveillance Robot</h2><br><br>
+<a href="#" id="up" style="font-size:30px;text-decoration:none;">  &#x1F881;&#x1F881;<br>Forward</a><br><br>
+<a href="#" id="left" style="font-size:30px;text-decoration:none;"> &#x1F880;&#x1F880;Left</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="#" id="right" style="font-size:30px; text-decoration:none;"> Right &#x1F882;&#x1F882;</a><br><br>
+<a href="#" id="down" style="font-size:30px;text-decoration:none;"> Backward<br> &#x1F883;&#x1F883;</a>
+</div>
+
+<script>
+$( document ).ready(function(){
+    $("#down").on("mousedown", function() {
+     $.get('/backward');
+     }).on('mouseup', function() {
+     $.get('/stop');
+    });
+    $("#up").on("mousedown", function() {
+     $.get('/forward);
+     }).on('mouseup', function() {
+     $.get('/stop');
+    });
+    $("#left").on("mousedown", function() {
+     $.get('/left');
+     }).on('mouseup', function() {
+     $.get('/stop');
+    });
+    $("#right").on("mousedown", function() {
+     $.get('/right');
+     }).on('mouseup', function() {
+     $.get('/stop');
+    });
+});
+</script>
+
+</body>
+</html>

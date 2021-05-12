@@ -29,17 +29,17 @@ def hello_world():
 
 @app.route('/left')
 def left():
-    template_data = {
-        'direction' : 'left'
-    }
-    return render_template('main.html', **template_data)
+    robby.left()
+    sleep(20)
+    robby.stop()
+    return 'true'
 
 @app.route('/right')
 def right():
-    template_data = {
-        'direction' : 'right'
-    }
-    return render_template('main.html', **template_data)
+    robby.right()
+    sleep(20)
+    robby.stop()
+    return 'true'
 
 @app.route('/forward')
 def forward():
@@ -50,17 +50,15 @@ def forward():
 
 @app.route('/backward')
 def backward():
-    template_data = {
-        'direction' : 'backward'
-    }
-    return render_template('main.html', **template_data)
+    robby.backward()
+    sleep(1)
+    robby.stop()
+    return 'true'
 
 @app.route('/stop')
 def stop():
-    template_data = {
-        'direction' : 'stopped'
-    }
-    return render_template('main.html', **template_data)
+    robby.stop()
+    return 'true'
 
 if __name__ == '__main__':
     app.run('0.0.0.0', debug = True)
