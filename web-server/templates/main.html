@@ -10,6 +10,14 @@
   <h1> Marios Roboter </h1>
 <p> {{ status }} </p>
 
+<div class="media">
+  <iframe src="http://192.168.4.1:8080/stream" ></iframe>
+</div>
+
+<div class="media">
+  <iframe src="{{ url_for('/') }}:8080/stream" ></iframe>
+</div>
+
 <div class="row">
   <div class="col-sm-4"></div>
   <div class="col-sm-4"><a href="#" id="up" style="font-size:30px;text-decoration:none;">  &#x1F881;&#x1F881;<br>Vorwärts</a></div>
@@ -17,7 +25,7 @@
 </div>
 <div class="row">
   <div class="col-sm-4"><a href="#" id="left" style="font-size:30px;text-decoration:none;"> &#x1F880;&#x1F880;Links</a></div>
-  <div class="col-sm-4"><iframe src="http://192.168.4.1:8080/stream" ></iframe></div>
+  <div class="col-sm-4"></div>
   <div class="col-sm-4"><a href="#" id="right" style="font-size:30px; text-decoration:none;"> Rechts &#x1F882;&#x1F882;</a></div>
 </div>
 <div class="row">
@@ -60,8 +68,30 @@ $( document ).ready(function(){
 
     <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
     <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
-<!-- {{ url_for('static', filename='css/bootstrap.min.css') }} -->
-<!-- {{ url_for('static', filename='js/bootstrap.min.js') }} -->
-<!-- {{ url_for('static', filename='js/jquery.min.css') }} -->
+<script>
+$( document ).ready(function(){
+    $("#down").on("mouseenter", function() {
+		console.log("back gedrueckt!")
+     $.get('/backward');
+     }).on('mouseleave', function() {
+     $.get('/stop');
+    });
+    $("#up").on("mouseenter", function() {
+     $.get('/forward');
+     }).on('mouseleave', function() {
+     $.get('/stop');
+    });
+    $("#left").on("mouseenter", function() {
+     $.get('/left');
+     }).on('mouseleave', function() {
+     $.get('/stop');
+    });
+    $("#right").on("mouseenter", function() {
+     $.get('/right');
+     }).on('mouseleave', function() {
+     $.get('/stop');
+    });
+});
+</script>
 </body>
 </html>
