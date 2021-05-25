@@ -67,30 +67,6 @@ $( document ).ready(function(){
 
     <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
     <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
-<script>
-$( document ).ready(function(){
-    $("#down").on("mouseenter", function() {
-		console.log("back gedrueckt!")
-     $.get('/backward');
-     }).on('mouseleave', function() {
-     $.get('/stop');
-    });
-    $("#up").on("mouseenter", function() {
-     $.get('/forward');
-     }).on('mouseleave', function() {
-     $.get('/stop');
-    });
-    $("#left").on("mouseenter", function() {
-     $.get('/left');
-     }).on('mouseleave', function() {
-     $.get('/stop');
-    });
-    $("#right").on("mouseenter", function() {
-     $.get('/right');
-     }).on('mouseleave', function() {
-     $.get('/stop');
-    });
-});
-</script>
+
 </body>
 </html>
