@@ -23,13 +23,13 @@
   <div class="col-sm-4"></div>
 </div>
 <div class="row">
-  <div class="col-sm-4"><a href="#" id="left" style="font-size:30px;text-decoration:none;"> &#x1F880;&#x1F880;Links</a></div>
+  <div class="col-sm-4"><a class="btn btn-primary" href="#" id="left" role="button">Links</a></div>
   <div class="col-sm-4"></div>
-  <div class="col-sm-4"><a href="#" id="right" style="font-size:30px; text-decoration:none;"> Rechts &#x1F882;&#x1F882;</a></div>
+  <div class="col-sm-4"><a class="btn btn-primary" href="#" id="right" role="button"> Rechts </a></div>
 </div>
 <div class="row">
   <div class="col-sm-4"></div>
-  <div class="col-sm-4"><a href="#" id="down" style="font-size:30px;text-decoration:none;"> Rückwärts<br> &#x1F883;&#x1F883;</a></div>
+  <div class="col-sm-4"><a class="btn btn-primary"  role="button" href="#" id="down" > Rückwärts</a></div>
   <div class="col-sm-4"></div>
 </div>
 
@@ -41,23 +41,23 @@
 
 <script>
 $( document ).ready(function(){
-    $("#down").on("mouseenter", function() {
+    $("#down").on("hover", function() {
 		console.log("back gedrueckt!")
      $.get('/backward');
      }).on('mouseleave', function() {
      $.get('/stop');
     });
-    $("#up").on("mouseenter", function() {
+    $("#up").on("hover", function() {
      $.get('/forward');
      }).on('mouseleave', function() {
      $.get('/stop');
     });
-    $("#left").on("mouseenter", function() {
+    $("#left").on("hover", function() {
      $.get('/left');
      }).on('mouseleave', function() {
      $.get('/stop');
     });
-    $("#right").on("mouseenter", function() {
+    $("#right").on("hover", function() {
      $.get('/right');
      }).on('mouseleave', function() {
      $.get('/stop');
