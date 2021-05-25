@@ -45,23 +45,23 @@
     <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
   <script>
 $( document ).ready(function(){
-    $("#down").on("click", function() {
+    $("#up").on("click", function() {
 		console.log("back gedrueckt!")
      $.get('/backward');
      }).on('mouseleave', function() {
      $.get('/stop');
     });
-    $("#up").on("click", function() {
+    $("#down").on("click", function() {
      $.get('/forward');
      }).on('mouseleave', function() {
      $.get('/stop');
     });
-    $("#left").on("hover", function() {
+    $("#left").on("click", function() {
      $.get('/left');
      }).on('mouseleave', function() {
      $.get('/stop');
     });
-    $("#right").on("mouseenter", function() {
+    $("#right").on("click", function() {
      $.get('/right');
      }).on('mouseleave', function() {
      $.get('/stop');
