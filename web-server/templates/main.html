@@ -39,15 +39,19 @@
 
 
 
-<script>
+
+
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+  <script>
 $( document ).ready(function(){
-    $("#down").on("hover", function() {
+    $("#down").on("click", function() {
 		console.log("back gedrueckt!")
      $.get('/backward');
      }).on('mouseleave', function() {
      $.get('/stop');
     });
-    $("#up").on("hover", function() {
+    $("#up").on("click", function() {
      $.get('/forward');
      }).on('mouseleave', function() {
      $.get('/stop');
@@ -57,16 +61,12 @@ $( document ).ready(function(){
      }).on('mouseleave', function() {
      $.get('/stop');
     });
-    $("#right").on("hover", function() {
+    $("#right").on("mouseenter", function() {
      $.get('/right');
      }).on('mouseleave', function() {
      $.get('/stop');
     });
 });
 </script>
-
-    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
-
 </body>
 </html>
