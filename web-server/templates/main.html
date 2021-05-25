@@ -41,23 +41,23 @@
 
 <script>
 $( document ).ready(function(){
-    $("#down").on("click", function() {
+    $("#down").on("hover", function() {
 		console.log("back gedrueckt!")
      $.get('/backward');
      }).on('mouseleave', function() {
      $.get('/stop');
     });
-    $("#up").on("click", function() {
+    $("#up").on("hover", function() {
      $.get('/forward');
      }).on('mouseleave', function() {
      $.get('/stop');
     });
-    $("#left").on("click", function() {
+    $("#left").on("hover", function() {
      $.get('/left');
      }).on('mouseleave', function() {
      $.get('/stop');
     });
-    $("#right").on("click", function() {
+    $("#right").on("hover", function() {
      $.get('/right');
      }).on('mouseleave', function() {
      $.get('/stop');
